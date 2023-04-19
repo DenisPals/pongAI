@@ -23,3 +23,5 @@ contains the class that defines the ball and implements collison detection.
 ## How to run
 This game uses the [LOVE2D Game Engine](https://love2d.org/). Install LOVE2D and clone into this repository. Drag and drop the repository `PongAI` on LOVE.exe in the LOVE folder in your program files. Alternatively on windows execute following command:
 >"C:\Program Files\LOVE\love.exe" "[`PathToPongAI`]"
+
+Press Enter to start and use key `w` for paddle up and `s` for down. 
