@@ -1,47 +1,25 @@
-# Speller - A program that spell-checks a file
+# Pong - A game from the 70s
 ## Complexity
-This spell-checker takes a dictionary and a file as input and spell-checks the file. To achieve this, the dictionary is read into memory and each word is stored in a hash table. Then the program iterates over each word in the input file and checks if the word is contained in the hash table (dictionary) and stores misspelled words. The wrong words are displayed in the command-line.
+This is a simple version of the game Pong implemented in Lua using the [LOVE2D](https://love2d.org/) game engine. This is a course related project and part of a problemset in Harvards CS50s Game Development course.
 
 The challenge was:
-* The implementation of the load function. 
-* The implementation of the hash function. 
-* The implementation of the size function. 
-* The implementation of the check  function. 
-* The implementation of the unload  function. 
-
-This is a course related project and part of the problemset in Harvards CS50x week 5.
+* Understanding the distribution code. 
+* Implement an AI for the game Pong. 
+* Get familiar with the LOVE2D framework. 
 
 ## Files
-**speller.c** contains the code that measures the time it takes to read the dictionary into memory and prints misspelled words.
+**main.lua** &rarr; 
+contains the implementation of three major function in LOVE2D engine: love.load, love.update and love.draw. These set up the game, control the game loop and draw/display the created sprites. The AI feature that was required for the course is implemented in the love.update function.
 
-**dictionary.c** contains the code that reads the dictionary into memory, a hashfunction that hashes each word from the dictionary, a size function that counts howmany words the dictionary contains, a check function that checks if a word is contained in the dictionary and an unload function that frees dynamically allocated heap memory. The hashfunction is simple and not taken from any online source but self-made.
+**paddle.lua** &rarr; 
+contains the class for the Paddle. In Lua every class is equvalent to a table.
 
-**keys**
-The keys folder contains a number of misspelled words to test the progeram.
+**push.lua** &rarr;
+contains a library written by Ulysse Ramage that helps to resize the window according to screen width/height without losing the resolution of sprites and text.
 
-**texts** folder contains a number of texts that can be spell-checked by the program
-
-**dictionaries** contains a small and a large dictionary, the small's purpose was initialy to test the basic functionality without needing to iterate over 143000 words of the large dictionary.
+**ball.lua** &rarr; 
+contains the class that defines the ball and implements collison detection.
 
 ## How to run
-To run this program, a C compiler must be installed. The best way is to run it is to use a Linux enviroment like WSL for windows (if not using Linux) and to run (after compiling): 
-Grayscale:
-> ./speller texts/YOURTEXT.txt
-
-This will automatically use the large dictionary and output the wrong words from your text.
-
-## Output
-```
-./speller texts/lalaland.txt
-MISSPELLED WORDS
-
-[...]
-AHHHHHHHHHHHHHHHHHHHHHHHHHHHT
-[...]
-Shangri
-[...]
-fianc
-[...]
-Sebastian's
-[...]
-```
+This game uses the [LOVE2D Game Engine](https://love2d.org/). Install LOVE2D and clone into this repository. Drag and drop the repository `PongAI` on LOVE.exe in the LOVE folder in your program files. Alternatively on windows execute following command:
+>"C:\Program Files\LOVE\love.exe" "[`PathToPongAI`]"
